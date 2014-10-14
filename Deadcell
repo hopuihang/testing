@@ -1,0 +1,24 @@
+package simulation;
+
+import core.Cell;
+
+/**
+ * A DeadCell is a cell that is dead. A DeadCell does not have stamina.
+ */
+public class DeadCell extends Cell
+{
+	@Override
+	public Cell getNextStage(int numNormalNeighbours, int numMutatedNeighbours)
+	{
+		if(numNormalNeighbours == 3){
+		// it become alive	return dead
+		}
+		else if(numMutatedNeighbours == 2 ){
+		// it become mutated
+		}
+		else{
+			return this; //stay remain for dead
+		}
+		
+	}
+}
