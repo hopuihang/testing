@@ -1,0 +1,36 @@
+package simulation;
+
+import core.Cell;
+
+/**
+ * A NormalCell is a special type of cell that is healthy. A NormalCell must keep
+ * track of the amount of stamina it has. All NormalCells will start life with
+ * 100% stamina. If the stamina gets to 1% or lower, the cell will die.
+ */
+public class NormalCell extends Cell
+{	
+	
+	/**
+	 * Get the amount of stamina left in this NormalCell expressed as a percentage.
+	 * 
+	 * 0.0 represents 0% and 1.0 represents 100%.
+	 * 
+	 * @return the percent of stamina left in this cell
+	 */
+	public double getPercentStamina(double staminaOld,int numNormalNeighbours,int numMutatedNeighbours) {
+	double staminaNew;
+	
+	
+	staminaNew = staminaOld*(3*numNormalNeighbours /(8+2*numMutatedNeighbours));
+	return staminaNew;
+	
+	
+		
+	}
+	
+	@Override
+	public Cell getNextStage(int numNormalNeighbours, int numMutatedNeighbours)
+	{
+		
+	}
+}
